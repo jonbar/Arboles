@@ -13,6 +13,8 @@ import javax.swing.JComboBox;
 import javax.swing.BoxLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Main extends JFrame {
 
@@ -52,6 +54,11 @@ public class Main extends JFrame {
 		comboBoxArboles.setFont(new Font("Calibri", Font.PLAIN, 11));
 		
 		JButton btnInsertarArbol = new JButton("Insertar Arbol");
+		btnInsertarArbol.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				abrirFormularioArbol();
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -80,6 +87,11 @@ public class Main extends JFrame {
 					.addGap(27))
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	protected void abrirFormularioArbol() {
+		FormularioArbol hija = new FormularioArbol();
+		hija.setVisible(true);
 	}
 
 }
