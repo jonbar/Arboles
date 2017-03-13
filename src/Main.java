@@ -90,7 +90,7 @@ public class Main extends JFrame {
 	}
 
 	protected void abrirFormularioArbol() {
-		FormularioArbol hija = new FormularioArbol();
+		FormularioArbol hija = new FormularioArbol(this, "Formulario" ,true);
 		hija.setVisible(true);
 	}
 
