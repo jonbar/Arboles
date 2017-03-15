@@ -21,7 +21,9 @@ public class Main extends JFrame {
 
 	private JPanel contentPane;
 	private JComboBox comboBoxArbol;
+	private JButton btnEliminarArbol;
 
+	
 	/**
 	 * Launch the application.
 	 */
@@ -62,10 +64,11 @@ public class Main extends JFrame {
 			}
 		});
 		
-		JButton btnEliminarArbol = new JButton("Eliminar Arbol");
+		btnEliminarArbol = new JButton("Eliminar Arbol");
 		btnEliminarArbol.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				int index = comboBoxArbol.getSelectedIndex();
+				eliminar(index);
 			}
 		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -111,7 +114,7 @@ public class Main extends JFrame {
 		this.comboBoxArbol.addItem(arbol.getNombre() + " - " + arbol.getZona() + " - " + arbol.getAltura());
 	}
 	
-	public void eliminar(){
-//		this.comboBoxArbol.
+	public void eliminar(int i){
+		this.comboBoxArbol.removeItemAt(i);
 	}
 }
